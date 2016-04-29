@@ -11,5 +11,12 @@
 |
 */
 
-Route::get('/', 'PagesController@home');
-Route::get('projets', 'PagesController@projects');
+//Route::get('/', 'PagesController@home');
+//Route::get('projets', 'PagesController@projects');
+Route::get('/', function() {
+    return view('welcome');
+});
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
